@@ -68,12 +68,8 @@ func (cli *CLI) generate(dir string, groups int, multiversion string) error {
 		return err
 	}
 
-<<<<<<< HEAD
 	//nolint:gosec // G404: Use of weak random number generator (math/rand instead of crypto/rand)
-	manifests, err := Generate(rand.New(rand.NewSource(randomSeed)))
-=======
-	manifests, err := Generate(rand.New(rand.NewSource(randomSeed)), multiversion) //nolint:gosec
->>>>>>> ac48630fd (e2e: add multiversion flag to generator (#9829))
+	manifests, err := Generate(rand.New(rand.NewSource(randomSeed)), multiversion)
 	if err != nil {
 		return err
 	}
